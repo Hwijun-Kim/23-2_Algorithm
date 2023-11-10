@@ -2,18 +2,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Å¸ÀÏ¸µ2xn {
+public class íƒ€ì¼ë§2xn {
 
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br  = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(br.readLine()); // n¹Ş±â
+		int n = Integer.parseInt(br.readLine()); // në°›ê¸°
 		
 		int[] dp = new int[1001];	// 1<=n<=1000
 		dp[1] = 1;
 		dp[2] = 2;
 		for (int i = 3; i <= n; i++) {
-			dp[i] = dp[i - 1] + dp[i -2] % 10007; // ÇÒ ¶§¸¶´Ù 10007·Î ³ª´²ÁÖÁö ¾ÊÀ¸¸é overflow ¹ß»ı
+			dp[i] = (dp[i - 1] + dp[i -2]) % 10007; // í•  ë•Œë§ˆë‹¤ 10007ë¡œ ë‚˜ëˆ ì£¼ì§€ ì•Šìœ¼ë©´ overflow ë°œìƒ
 		}
 		System.out.println(dp[n]);
 	}
